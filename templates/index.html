@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.min.js') }}">\x3C/script>')</script>
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/css/responsive.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Materialize, note: the js has to be loaded AFTER Jquery -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type='text/JavaScript'>
+        $(document).ready(function() {
+            $('select').material_select();
+            $(".button-collapse").sideNav(); 
+        });
+        </script>
+    <style>
+        #crown {
+            height: 20px;
+            width: 20px;
+        }
+
+        select {
+            display: block !important;
+        }
+
+        .lbl {
+            position: absolute;
+            top: -14px;
+            font-size: 0.8rem;
+        }
+
+        input {
+            color: black;
+            padding-left: 10px;
+        }
+
+        .row .col.s12 {
+            width: 100%;
+            margin-left: 0;
+        }
+    </style>
+
+    <script type="text/javascript"
+        src="//media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/ckeditor.js"></script>
+    <style>
+        .cke {
+            visibility: hidden;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css"
+        href="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/skins/moono-lisa/editor_gecko.css?t=GB8C">
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/lang/en.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/styles.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/mathjax/plugin.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/imgur/plugin.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/widget/plugin.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/lineutils/plugin.js?t=GB8C"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css">
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/mathjax/lang/en.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/imgur/lang/en.js?t=GB8C"></script>
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/widget/lang/en.js?t=GB8C"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/copyformatting/styles/copyformatting.css">
+    <script type="text/javascript"
+        src="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/plugins/mathjax/dialogs/mathjax.js?t=GB8C"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/skins/moono-lisa/dialog.css?t=GB8C">
+
+    <script type="text/javascript">
+        CKEDITOR.config.customConfig = '//media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor-plugins/create_question.editor.config.js';
+        CKEDITOR.config.contentsCss = ["//media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/contents.css", "//media-mycbseguide.s3.amazonaws.com/v1.8.4/ckeditor/ckeditor/document-editor.css"];
+    </script>
+</head>
+
+<body>
+    <form action="/", method="POST">
+        {{ form.csrf_token }}
+        {{ form.question() }}
+        <input type="submit">
+    </form>
+    <!-- <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script> -->
+</body>
+
+</html>
